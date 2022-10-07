@@ -8,7 +8,6 @@ import { getFormattedDate } from "../../util/date";
 function ExpenseForm({ onCancel, onSubmitFormat, onSubmit, defaultValues }) {
   const [inputValues, setInputValues] = useState({
     amount: defaultValues ? defaultValues.amount.toString() : "",
-    // date: defaultValues ? defaultValues.date.toISOString().slice(0,10) : '',
     date: defaultValues ? getFormattedDate(defaultValues.date) : "",
     description: defaultValues ? defaultValues.description : "",
   });

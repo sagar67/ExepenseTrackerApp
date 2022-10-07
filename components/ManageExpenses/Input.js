@@ -21,13 +21,11 @@ export default Input;
 
 const styles = StyleSheet.create({
   rootContainer: {
-    // flex:1,
     marginHorizontal: 8,
     marginVertical: 13,
   },
   text: {
     fontSize:16,
-    // color: "white",
     color:GlobalStyles.colors.accent500,
     marginBottom:8,
   },

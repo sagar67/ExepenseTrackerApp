@@ -22,8 +22,6 @@ function ManageExpense({ route, navigation }) {
     return expense.id === editedExpenseId;
   });
 
-  // console.log(selectedExpense)
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: isEditing ? "Edit Expense" : "Add Expense",
@@ -54,10 +52,6 @@ function ManageExpense({ route, navigation }) {
         expensesCtx.updateExpense(editedExpenseId, expenseData);
       } else {
         const id = await storeExpense(expenseData);
-        console.log(
-          "*** ManageExpense confirmHandler storeExpense expenseData",
-          expenseData
-        );
         expensesCtx.addExpense({ ...expenseData, id: id });
       }
       navigation.goBack();

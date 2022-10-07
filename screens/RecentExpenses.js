@@ -11,7 +11,6 @@ function RecentExpenses() {
   const expensesCtx = useContext(ExpensesContext);
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState();
-  // const [fetchedExpense,setFetchedExpense] = useState([]);
 
   useEffect(() => {
     async function getExpenses() {
@@ -23,7 +22,6 @@ function RecentExpenses() {
         setError(`Expenses couldn't be fetched`);
       }
       setIsFetching(false);
-      // setFetchedExpense(expenses)
     }
     getExpenses();
   }, []);
@@ -40,7 +38,6 @@ function RecentExpenses() {
     return <ErrorOverlay message={error} onConfirm={errorHandler} />
   }
   const recentExpenses = expensesCtx.expenses.filter((expense) => {
-    // const recentExpenses = fetchedExpense.filter((expense) => {
     const today = new Date();
     const date7DaysAgo = getDateMinusDays(today, 7);
 
